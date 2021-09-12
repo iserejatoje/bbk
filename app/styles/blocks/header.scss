@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  align-items: center;
+  @include respond($mobile) {
+    padding: 40px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 15px 0;
+  }
+  justify-content: space-between;
+}
+
+.info {
+  .phone {
+    font-size: 21px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}

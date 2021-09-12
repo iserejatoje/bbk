@@ -1,0 +1,280 @@
+.packs-text {
+  color: #fff;
+  @include respond($mobile) {
+    font-size: 20px;
+    max-width: 865px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 16px;
+  }
+  padding-top: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.packs-list {
+  @include respond($mobile) {
+    padding-top: 50px;
+    padding-bottom: 92px;
+  }
+  @include respond(0, $mobile) {
+    padding-top: 35px;
+    padding-bottom: 50px;
+  }
+}
+
+.button-lead {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  height: 50px;
+  max-width: 190px;
+}
+
+.pack-item {
+  background: transparentize($dark, .5);
+
+  &.opened {
+    .pack-content {
+      display: flex;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.pack-content {
+  border: 1px solid #898a90;
+  border-top: none;
+  display: none;
+
+  .old-price {
+    color: #898a90;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #898a90;
+      margin: auto 0;
+      pointer-events: none;
+    }
+  }
+
+  .new-price {
+    color: $accent;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+
+  justify-content: space-between;
+  flex-direction: column;
+
+  .title {
+    font-size: 20px;
+    color: $accent;
+    line-height: 1.506;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 6px;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  .content {
+    color: #fff;
+
+    @include respond($mobile) {
+      display: flex;
+    }
+
+    .right {
+      @include respond($mobile) {
+        max-width: 290px;
+        align-items: flex-end;
+      }
+      @include respond(0, $mobile) {
+        align-items: flex-start;
+      }
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left {
+      flex: 1;
+
+      @include respond($mobile) {
+        padding: 61px 80px 54px 67px;
+      }
+      @include respond(0, $mobile) {
+        padding: 25px;
+      }
+    }
+
+    .right {
+      text-align: right;
+      text-transform: uppercase;
+
+      @include respond($mobile) {
+        min-width: 292px;
+        padding: 70px 49px 50px 22px;
+      }
+      @include respond(0, $mobile) {
+        padding: 25px;
+      }
+
+      border-left: 1px solid #898a90;
+    }
+  }
+}
+
+.pack-title {
+  border: 1px solid #898a90;
+  cursor: pointer;
+
+  background: transparentize($dark, .5);
+  transition: background 200ms ease-in-out;
+
+  &:hover {
+    background: #1c2624;
+  }
+
+
+  @include respond($mobile) {
+    padding: 58px 80px 58px 67px;
+  }
+  @include respond(0, $mobile) {
+    padding: 25px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    @include respond($mobile) {
+      padding-right: 40px;
+    }
+    @include respond(0, $mobile) {
+      padding-right: 20px;
+    }
+  }
+
+  button {
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+
+  svg {
+    fill: $accent;
+    display: block;
+  }
+
+  .pack-name {
+    cursor: pointer;
+    @include respond($mobile) {
+      font-size: 30px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 25px;
+    }
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $accent;
+    line-height: 1.6;
+  }
+
+  .pack-description {
+    @include respond($mobile) {
+      font-size: 20px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 14px;
+    }
+    color: #fff;
+    line-height: 1.6;
+  }
+}
+
+.pack-list {
+  display: flex;
+  color: #fff;
+
+  .title {
+    font-size: 20px;
+
+  }
+
+  @include respond($mobile) {
+    margin-top: 50px;
+    margin-bottom: 110px;
+    min-height: 444px;
+  }
+
+  @include respond(0, $mobile) {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .left {
+    max-width: 820px;
+    width: 100%;
+    padding: 50px 95px 40px 65px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, #303030, #505050);
+  }
+
+  .right {
+    background: linear-gradient(45deg, #303030, #505050);
+    flex: 1;
+  }
+}
+
+.pack-list_inner {
+  border: 1px solid #898a90;
+  margin-top: 20px;
+  flex: 1;
+
+  .name {
+    border-right: 1px solid #898a90;
+    max-width: 470px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 14px;
+  }
+
+  .price {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .item {
+    min-height: 60px;
+    display: flex;
+    border-bottom: 1px solid #898a90;
+  }
+}

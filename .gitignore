@@ -1,6 +1,2 @@
 /node_modules/
-/app/
 /.idea/
-/gulpfile.js
-/package.json
-/package-lock.json

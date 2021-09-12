@@ -1,0 +1,669 @@
+.logo-link {
+  display: flex;
+  justify-content: center;
+
+  svg {
+    display: block;
+    max-width: 100%;
+
+    @include respond($mobile) {
+      width: 186px;
+      height: 90px;
+    }
+    @include respond(0, $mobile) {
+      width: 130px;
+      height: 62px;
+    }
+
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container-wild {
+  max-width: 1370px + (15px * 2);
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  max-width: 1170px + (15px * 2);
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.button {
+  background: transparent;
+  width: 100%;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $accent;
+  color: #fff;
+  transition: background 200ms ease-in-out;
+
+  &:hover {
+    background: $accent;
+  }
+}
+
+.svg-sprite {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.communications {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $accent;
+  padding-top: 7px;
+  margin-top: 3px;
+
+  a {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &:hover {
+      svg {
+        fill: $accent;
+      }
+    }
+  }
+
+  svg {
+    transition: fill 200ms ease-in-out;
+    filL: #fff;
+  }
+}
+
+.grunge-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.grunge-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.block-title {
+  font-weight: 700;
+  @include respond($mobile) {
+    font-size: 40px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 24px;
+  }
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+
+  span {
+    color: $accent;
+  }
+}
+
+h1 {
+  @include respond($mobile) {
+    &.fs-52 {
+      font-size: 52px;
+    }
+    &:not(.fs-52) {
+      font-size: 56px;
+    }
+  }
+  @include respond(0, $mobile) {
+    font-size: 30px;
+  }
+  color: #fff;
+  margin: 0;
+  line-height: 1.3em;
+
+  span {
+    color: $accent;
+  }
+}
+
+.hide-on-mobile {
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+.show-on-mobile {
+  @include respond(0, $mobile) {
+    display: block;
+  }
+  @include respond(0 $mobile) {
+    display: none;
+  }
+}
+
+header {
+  nav {
+    @include respond(1280px) {
+      max-width: 570px;
+    }
+    @include respond(0, 1280px) {
+      max-width: 520px;
+    }
+    width: 100%;
+    justify-content: space-between;
+
+  }
+}
+
+body.menu-opened {
+  overflow: hidden;
+
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+.mobile-menu {
+  background: $dark;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 0;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  .mobile-menu_close-button {
+    right: 18px;
+    top: 35px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    svg {
+      fill: #fff;
+      display: block;
+    }
+  }
+
+  .info {
+    margin-top: 30px;
+  }
+
+  nav {
+    margin: 40px 0;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      transition: color 200ms ease-in-out;
+
+      &:hover {
+        color: $accent
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
+
+header {
+  nav a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    position: relative;
+  }
+}
+
+footer {
+  nav {
+    @include respond(0, $mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include respond($mobile) {
+      max-width: 835px;
+      width: 100%;
+      justify-content: space-between;
+      padding-left: 48px;
+    }
+
+    a {
+      line-height: 1.2;
+
+      @include respond($mobile) {
+        font-size: 20px;
+      }
+      @include respond(0, $mobile) {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}
+
+nav {
+  display: flex;
+
+  a {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      &:after {
+        right: 0;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 100%;
+      height: 1px;
+      bottom: -7px;
+      background: $accent;
+      transition: right 200ms ease-in-out;
+    }
+  }
+
+}
+
+.button-payment {
+  max-width: 190px;
+  height: 53px;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+
+  @include respond(0, 1280px) {
+    display: none;
+  }
+}
+
+.page-block {
+  @include respond($mobile) {
+    padding-top: 64px;
+  }
+  @include respond(0, $mobile) {
+    padding-top: 34px;
+  }
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-center-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &:not(.align-center) {
+    align-items: flex-start;
+  }
+
+  > *:first-child {
+    margin-right: 50px;
+  }
+
+  > * {
+    margin-bottom: 20px;
+  }
+}
+
+.burger {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 40px;
+
+  @include respond($mobile) {
+    display: none;
+  }
+
+  .burger-line {
+    background: #fff;
+    display: block;
+    height: 1px;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.app-inner {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.footer-logo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include respond(0, $mobile) {
+    justify-content: center;
+  }
+  @include respond($mobile) {
+    max-width: 236px;
+    height: 250px;
+    padding-left: 15px;
+  }
+
+}
+
+.footer-left {
+
+  @include respond($mobile) {
+    background: linear-gradient(90deg, #303030, #505050);
+    padding-left: calc((100% - 1200px) / 2);
+    border-right: 1px solid #898a90;
+    max-width: 250px;
+    width: 100%;
+  }
+
+}
+
+.footer-right {
+  @include respond($mobile) {
+    padding-right: calc((100% - 975px) / 2);
+    background: linear-gradient(90deg, #303030, #505050);
+  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  flex: 0 0 auto;
+  display: flex;
+
+  @include respond(0, $mobile) {
+    flex-direction: column;
+    padding: 25px 0;
+    background: linear-gradient(90deg, #303030, #505050);
+  }
+
+  .footer-left,
+  .footer-right {
+    @include respond(0, $mobile) {
+      padding: 20px 15px;
+    }
+  }
+
+  .container {
+    display: flex;
+  }
+}
+
+.depot-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.train-shown {
+  .train {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.train {
+  @include respond(0, $mobile) {
+    display: none;
+  }
+  @include respond($mobile) {
+    display: flex;
+  }
+
+  &:hover {
+    background: $accent;
+  }
+
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $accent;
+  cursor: pointer;
+  position: fixed;
+  z-index: 5;
+  bottom: 98px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms ease;
+
+  svg {
+    fill: #fff;
+  }
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    background: #898a90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: background 200ms ease-in-out;
+
+    &:hover {
+      background: $accent;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  svg {
+    fill: #fff;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid #898a90;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  line-height: 1.312;
+  justify-content: space-between;
+
+  .phone {
+    svg {
+      margin-right: 11px;
+    }
+  }
+
+  .address {
+    line-height: 1.4;
+
+    @include respond(0, $mobile) {
+      margin: 20px 0;
+    }
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .phone,
+  .address {
+    text-decoration: none;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+
+    @include respond(0, $mobile) {
+      max-width: 260px;
+      text-align: center;
+    }
+
+    svg {
+      fill: $accent;
+
+      @include respond(0, $mobile) {
+        display: none;
+      }
+
+    }
+  }
+
+  @include respond($mobile) {
+    padding-left: 48px;
+    margin-top: 45px;
+    padding-top: 38px;
+    font-size: 15px;
+  }
+
+  @include respond(0, $mobile) {
+    margin-top: 20px;
+    font-size: 16px;
+    padding-top: 38px;
+    flex-direction: column;
+  }
+}
+
+.bottom-right,
+.top-left {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+.top-left {
+  left: 0;
+  top: 0;
+}
+
+.bottom-right {
+  right: 0;
+  bottom: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+[data-simplebar] {
+  max-height: 900px;
+}
+
+.fs-40_bold {
+  @include respond($mobile) {
+    font-size: 40px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 24px;
+  }
+
+  span {
+    color: $accent;
+  }
+
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.swiper-container:not(.swiper-initialized) {
+  opacity: 0;
+}
+
+.button-download {
+  border: 1px solid $accent;
+  position: relative;
+  font-size: 14px;
+  color: #fff;
+  padding: 0 20px;
+  text-decoration: none;
+  outline: none;
+  min-height: 53px;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 1.7px;
+  max-width: 364px;
+  text-transform: uppercase;
+  justify-content: center;
+  width: 100%;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $accent;
+  }
+
+  svg {
+    fill: #fff;
+    margin-right: 10px;
+  }
+
+  &:before {
+
+    top: -3px;
+  }
+
+  &:after {
+    bottom: -3px;
+  }
+
+  &:before,
+  &:after {
+    background: $dark;
+    height: 5px;
+    content: '';
+    right: 15px;
+    left: 15px;
+    position: absolute;
+  }
+}
+
+.checkbox {
+  input {
+    opacity: 0;
+    position: absolute;
+  }
+}

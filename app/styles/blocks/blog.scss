@@ -1,0 +1,287 @@
+.page-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+.tag-block {
+  .tag-link {
+    @include respond($mobile) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 16px;
+    }
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    &:not(:last-child) {
+      @include respond($mobile) {
+        margin-right: 50px;
+      }
+      @include respond(0, $mobile) {
+        margin-right: 20px;
+      }
+    }
+
+    &:hover {
+      color: $accent
+    }
+  }
+}
+
+.vertical-items {
+
+  @include respond(0, $mobile) {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  @include respond(0, $mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  @include respond($mobile) {
+    .blog-item {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .title {
+    line-height: 1.563;
+  }
+
+  .read-more {
+    @include respond(0, $mobile) {
+      order: 3;
+    }
+  }
+
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .blog-item {
+    @include respond(0, $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  @include respond($mobile) {
+    margin-top: 60px;
+  }
+
+  @include respond(0, $mobile) {
+    margin-top: 20px;
+  }
+}
+
+.horizontal-items {
+  display: grid;
+
+  @include respond($mobile) {
+    margin-top: 63px;
+    grid-gap: 39px;
+    padding-bottom: 60px;
+  }
+  @include respond(0, $mobile) {
+    margin-top: 20px;
+    grid-gap: 20px;
+    padding-bottom: 30px;
+  }
+  @include respond($mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(364px, auto));
+  }
+  @include respond(0, $mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    color: #898a90;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: space-between;
+  }
+
+  .text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.572;
+    margin-bottom: auto;
+  }
+
+  .title {
+    line-height: 1.445;
+  }
+
+  .read-more {
+    padding-top: 20px;
+  }
+
+  .blog-item {
+    border: 1px solid #898a90;
+    @include respond($mobile) {
+      padding: 31px 40px;
+      min-height: 364px;
+    }
+    @include respond(0, $mobile) {
+      padding: 20px;
+    }
+    background: transparentize(#000, .5);
+    flex-direction: column;
+  }
+
+  .author {
+    padding-right: 30px;
+  }
+}
+
+.blog-item {
+  display: flex;
+
+  img {
+    filter: grayscale(100%);
+  }
+
+  .title {
+    color: $accent;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-decoration: none;
+  }
+
+  .text {
+    max-width: 455px;
+  }
+
+  .read-more {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: auto;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include respond($mobile) {
+      margin-top: 40px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: auto;
+      padding-top: 25px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    span {
+      color: #898a90;
+      font-size: 14px;
+
+      @include respond(0, $mobile) {
+        margin: 2px 0;
+      }
+    }
+
+    .read-more {
+      @include respond(0, $mobile) {
+        margin-top: 20px;
+      }
+    }
+
+    .author {
+      margin-right: 28px;
+    }
+  }
+
+  .content {
+    position: relative;
+    background: transparentize(#000, .5);
+    line-height: 22px;
+    font-size: 14px;
+    flex: 1;
+
+    @include respond($mobile) {
+      padding: 20px 176px 20px 90px;
+      border-left: none;
+    }
+    @include respond(0, $mobile) {
+      padding: 20px;
+      border-top: none;
+    }
+
+    border: 1px solid #898a90;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include respond($mobile) {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 87px;
+        background: #898a90;
+        display: block;
+        width: 1px;
+        z-index: 1;
+      }
+    }
+
+  }
+}
+
+.blog-author_image {
+  @include respond(0, $mobile) {
+    margin-bottom: 10px;
+  }
+  @include respond($mobile) {
+    position: absolute;
+    right: 56px;
+    top: 45px;
+    bottom: 0;
+    z-index: 2;
+  }
+  border-radius: 50%;
+}
+
+.button-load_more {
+  max-width: 293px;
+  height: 80px;
+  @include respond($mobile) {
+    font-size: 20px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 16px;
+  }
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}

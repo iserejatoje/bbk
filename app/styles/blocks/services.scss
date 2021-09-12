@@ -1,0 +1,139 @@
+.services-wrapper {
+  .content {
+    @include respond($mobile) {
+      min-height: 208px;
+    }
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  .content {
+    border: 1px solid #898a90;
+    transition: border 250ms ease-in-out;
+    border-top: none;
+    background: linear-gradient(0deg, #0d0d0d, #454645);
+    @include respond($mobile) {
+      padding: 27px 33px;
+    }
+    @include respond(0, $mobile) {
+      padding: 20px;
+    }
+    display: flex;
+    flex-direction: column;
+  }
+
+  &:hover {
+    .content {
+      border-color: $accent;
+    }
+  }
+
+  .title {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.588;
+    font-weight: 700;
+  }
+
+  &:hover {
+    img {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.seo-block {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.625;
+
+  @include respond($mobile) {
+    padding-bottom: 70px;
+  }
+  @include respond(0, $mobile) {
+    padding-bottom: 30px;
+  }
+
+  .column:first-child {
+
+    @include respond(1366px) {
+      max-width: 624px;
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 1.6em;
+    }
+  }
+
+  .block-title {
+    margin-bottom: 20px;
+  }
+}
+
+.services-wrapper {
+  @include respond($mobile) {
+    margin-bottom: 100px;
+  }
+  @include respond(0, $mobile) {
+    margin-bottom: 55px;
+  }
+}
+
+.services-items {
+  display: grid;
+
+  @include respond($mobile) {
+    margin-top: 60px;
+    grid-gap: 39px;
+  }
+  @include respond(0, $mobile) {
+    margin-top: 20px;
+    grid-gap: 20px;
+  }
+
+  .button-request {
+    max-width: 180px;
+    height: 50px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    margin-top: auto;
+
+  }
+
+  img {
+    width: 100%;
+    transition: filter 200ms ease-in-out;
+    filter: grayscale(1);
+  }
+
+  @include respond($mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(263px, auto));
+  }
+  @include respond(0, $mobile) {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.teenager-image {
+  position: absolute;
+  bottom: 0;
+
+  @include respond(1680px) {
+    right: 108px;
+  }
+  @include respond(0, 1366px) {
+    display: none;
+  }
+  @include respond(1366px, 1680px) {
+    right: -80px;
+  }
+  user-select: none;
+  pointer-events: none;
+  z-index: -1;
+}

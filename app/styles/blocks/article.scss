@@ -1,0 +1,102 @@
+.blog-back_link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 7px;
+
+  svg {
+    fill: $accent;
+    margin-right: 9px;
+  }
+}
+
+.article-wrapper {
+  @include respond($mobile) {
+    display: flex;
+  }
+  margin-top: 20px;
+}
+
+.article-content {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.375;
+  width: 100%;
+
+  @include respond($mobile) {
+    max-width: 806px;
+    padding-right: 84px;
+  }
+
+  &[data-simplebar='init'] {
+    box-shadow: inset -1px 0px 0 0px #898a90;
+
+    @include respond(0, $mobile) {
+      padding-right: 44px;
+    }
+  }
+
+  @include respond($mobile) {
+    margin-bottom: 94px;
+  }
+  @include respond(0, $mobile) {
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1.35em;
+  }
+
+  b,
+  strong {
+    color: $accent;
+  }
+}
+
+.article-info {
+  padding-bottom: 36px;
+
+  @include respond($mobile) {
+    padding-left: 59px;
+    flex: 1;
+  }
+
+  .article-image {
+    margin-top: 25px;
+  }
+
+  .article-author {
+    @include respond($mobile) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 30px;
+    }
+    color: $accent;
+    font-weight: 700;
+    line-height: 1.25;
+    padding-top: 23px;
+  }
+
+  .article-author_role {
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.25;
+    font-weight: 700;
+    padding-top: 21px;
+  }
+
+  .article-date {
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 6px;
+    line-height: 1.2;
+    border-bottom: 1px solid $accent;
+    display: block;
+  }
+}

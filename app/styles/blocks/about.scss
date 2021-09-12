@@ -1,0 +1,333 @@
+.about-bg {
+  margin: 190px auto auto;
+}
+
+.about-text {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.625;
+  padding-top: 20px;
+  max-width: 590px;
+  padding-bottom: 33px;
+}
+
+.advantages-grid {
+  display: grid;
+
+  @include respond($mobile) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 46px;
+    grid-gap: 40px;
+  }
+  @include respond(0, $mobile) {
+    grid-gap: 20px;
+    padding-top: 30px;
+  }
+}
+
+.advantages-item {
+  position: relative;
+  background: transparentize(#000, 0.5);
+  border: 1px solid #898a90;
+  min-height: 250px;
+  display: flex;
+  transition: border 200ms ease-in-out;
+
+  &:active,
+  &:hover {
+    border-color: $accent;
+
+    .layer-2 {
+      opacity: 1;
+    }
+
+    .layer-1 {
+      opacity: 0;
+    }
+  }
+
+  svg {
+    fill: #fff;
+  }
+
+  .layer-2 {
+    opacity: 0;
+  }
+
+  .layer-1,
+  .layer-2 {
+    padding: 35px 38px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .layer-2 {
+    justify-content: center;
+
+    .text {
+      color: #fff;
+      line-height: 1.715;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 7px;
+    }
+
+    .title {
+      color: $accent;
+    }
+  }
+
+  .layer-1 {
+    .title {
+      color: #fff;
+      margin-top: auto;
+    }
+  }
+}
+
+.money-dude {
+  position: absolute;
+  right: -34px;
+  pointer-events: none;
+  user-select: none;
+  top: 70px;
+  z-index: -1;
+}
+
+.refund-block {
+  position: relative;
+  color: #fff;
+  @include respond($mobile) {
+    min-height: 590px;
+    padding: 30px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 80px 0;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .fs-40_bold {
+    max-width: 710px;
+  }
+
+  .button-download {
+    margin-top: 24px;
+  }
+}
+
+.team-block {
+  position: relative;
+  @include respond($mobile) {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  @include respond(0, $mobile) {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .team-button-prev {
+    @include respond(1350px) {
+      left: -60px;
+    }
+    @include respond(0, 1350px) {
+      left: 0;
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
+
+  .team-button-next {
+    @include respond(1350px) {
+      right: -60px;
+    }
+    @include respond(0, 1350px) {
+      right: 0;
+    }
+  }
+
+  .team-button-prev,
+  .team-button-next {
+    position: absolute;
+    background: transparent;
+    padding: 0;
+    border: none;
+    top: calc(50% + 18px);
+
+    svg {
+      fill: $accent;
+      display: block;
+    }
+  }
+}
+
+.team-slider {
+  overflow: hidden;
+  margin-top: 46px;
+
+  @include respond(0, 1350px) {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .text {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.714;
+  }
+
+  .card {
+    img {
+      filter: grayscale(1);
+      transition: filter 200ms ease-in-out;
+    }
+
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  .content {
+    min-height: 150px;
+  }
+}
+
+.address-item {
+  width: 100%;
+  background: $dark;
+  @include respond(0, $mobile) {
+    padding: 0 0 40px 0;
+  }
+  @include respond($mobile) {
+    position: absolute;
+    transform: translateY(-20px);
+    min-height: 175px;
+    max-width: 700px;
+  }
+  top: 100%;
+  padding: 55px;
+  display: flex;
+
+  svg {
+    margin-right: 30px;
+
+    @include respond(0, $mobile) {
+      display: none;
+    }
+  }
+}
+
+.address-image {
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+.address-block {
+  overflow: hidden;
+  position: relative;
+
+  .bottom {
+    color: #fff;
+  }
+
+  .top {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+
+    span {
+      color: $accent;
+    }
+  }
+
+  .container {
+    @include respond($mobile) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 225px;
+      z-index: 100;
+    }
+  }
+
+  .swiper-navigation {
+    display: flex;
+
+    @include respond(0, $mobile) {
+      padding-bottom: 35px;
+    }
+
+    button:first-child {
+      margin-right: 5px;
+    }
+  }
+
+  .address-button-prev {
+    transform: rotate(-90deg);
+  }
+
+  .address-button-next {
+    transform: rotate(90deg);
+  }
+
+  .swiper-button-disabled {
+    background: #444 !important;
+  }
+
+  .address-button-prev,
+  .address-button-next {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    background: $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+
+    svg {
+      fill: #fff;
+      display: block;
+    }
+  }
+}
+
+.our-offices_title {
+  padding-bottom: 46px;
+}
+
+.about-wrapper {
+  position: relative;
+}
