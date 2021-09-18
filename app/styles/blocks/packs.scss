@@ -40,7 +40,12 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 40px;
+    @include respond($mobile) {
+      margin-bottom: 40px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -151,7 +156,6 @@
 .pack-title {
   border: 1px solid #898a90;
   cursor: pointer;
-
   background: transparentize($dark, .5);
   transition: background 200ms ease-in-out;
 
@@ -159,12 +163,12 @@
     background: #1c2624;
   }
 
-
   @include respond($mobile) {
     padding: 58px 80px 58px 67px;
   }
+
   @include respond(0, $mobile) {
-    padding: 25px;
+    padding: 15px;
   }
   display: flex;
   align-items: center;
@@ -220,9 +224,21 @@
   display: flex;
   color: #fff;
 
+  .form-controls {
+    @include respond(0, $mobile) {
+      margin-top: 25px;
+    }
+    @include respond($mobile) {
+      margin-top: 56px;
+    }
+  }
+
+  @include respond(0, $mobile) {
+    flex-direction: column;
+  }
+
   .title {
     font-size: 20px;
-
   }
 
   @include respond($mobile) {
@@ -237,44 +253,196 @@
   }
 
   .left {
-    max-width: 820px;
-    width: 100%;
-    padding: 50px 95px 40px 65px;
-    display: flex;
-    flex-direction: column;
+    @include respond($mobile) {
+      max-width: 820px;
+      width: 100%;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
     background: linear-gradient(90deg, #303030, #505050);
+
+    @include respond($mobile) {
+      padding: 50px 50px 40px 65px;
+    }
+    @include respond(0, $mobile) {
+      padding: 20px;
+    }
   }
 
   .right {
-    background: linear-gradient(45deg, #303030, #505050);
-    flex: 1;
+    @include respond(0, $mobile) {
+      padding: 20px;
+    }
+    @include respond($mobile) {
+      max-width: 350px;
+      width: 100%;
+      padding: 72px 50px 54px 50px;
+    }
+
+    .field {
+      font-size: 16px;
+      color: #fff;
+      line-height: 1.375;
+    }
+
+    .amount {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .value {
+      font-size: 30px;
+      color: $accent;
+      font-weight: bold;
+      line-height: 1;
+    }
   }
+
+}
+
+.button-medium {
+  font-size: 16px;
+  text-transform: uppercase;
+  min-height: 60px;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.privacy-text {
+  font-size: 11px;
+  color: #8c8c8c;
+  line-height: 1.6;
+  display: block;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .pack-list_inner {
-  border: 1px solid #898a90;
   margin-top: 20px;
   flex: 1;
+  box-shadow: inset -1px 0 0 0 #6f6f6f;
+
+  &[data-simplebar="init"] {
+    padding-right: 45px;
+    max-height: 300px;
+  }
+
+  &:not([data-simplebar="init"]) {
+    border: 1px solid #6f6f6f;
+  }
+
+  .simplebar-wrapper {
+    margin-right: 0 !important;
+    border: 1px solid #6f6f6f;
+  }
 
   .name {
-    border-right: 1px solid #898a90;
-    max-width: 470px;
+    border-right: 1px solid #6f6f6f;
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0 30px;
+    line-height: 1.572;
     font-size: 14px;
+
+    @include respond($mobile) {
+      padding: 18px 50px 18px 30px;
+    }
+    @include respond(0, $mobile) {
+      padding: 18px;
+    }
+    @include respond(1200px) {
+      max-width: 470px;
+    }
+    @include respond(1100px, 1200px) {
+      max-width: 400px;
+    }
+    @include respond($mobile, 1100px) {
+      max-width: 310px;
+    }
+
   }
 
   .price {
     flex: 1;
     display: flex;
     align-items: center;
+
+    @include respond($mobile) {
+      justify-content: center;
+    }
+    @include respond(0, $mobile) {
+      padding: 0 18px 18px 18px;
+      justify-content: flex-start;
+    }
+
+    .value {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
   }
 
   .item {
     min-height: 60px;
     display: flex;
-    border-bottom: 1px solid #898a90;
+
+    @include respond(0, $mobile) {
+      flex-direction: column;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #898a90;
+    }
+  }
+}
+
+.pack-expert {
+  position: relative;
+
+  .packman {
+    position: absolute;
+    right: -35px;
+    bottom: -2px;
+    display: block;
+    z-index: -2;
+    pointer-events: none;
+
+    @include respond($mobile, 1066px) {
+      max-width: 590px;
+    }
+    @include respond(0, $mobile) {
+      display: none;
+    }
+  }
+
+  @include respond($mobile) {
+    padding-bottom: 100px;
+  }
+  @include respond(0, $mobile) {
+    padding-bottom: 50px;
+  }
+}
+
+.expert-form {
+  @include respond($mobile) {
+    max-width: 400px;
+    min-height: 500px;
+    padding: 55px 50px;
+  }
+  @include respond(0, $mobile) {
+    padding: 30px 20px;
+  }
+
+  .title {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    line-height: 1.375;
+  }
+
+  .form-controls {
+    margin-top: 28px;
   }
 }

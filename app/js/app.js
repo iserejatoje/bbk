@@ -1,7 +1,13 @@
 import $ from 'jquery'
+import IMask from 'imask'
 
 window.jQuery = $
 window.$ = $
+
+const phoneMask = document.querySelectorAll('[type="tel"]')
+phoneMask.forEach(element => IMask(element, {
+    mask: '+{7} (000) 000-00-00'
+}))
 
 window.mobileAndTabletCheck = function () {
     let check = false;
@@ -15,6 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.burger').click(() => {
         $('body').toggleClass('menu-opened')
     })
+
+    $('.pack-checkbox').change(() => {
+        let total = 0
+        $('.pack-checkbox:checked').each(function(){
+            total += parseFloat($(this).val())
+        })
+        $('.pack-amount').text(total + ' РУБ.')
+    })
+
 
     if ($('.team-slider').length > 0) {
         new Swiper('.team-slider', {
@@ -63,9 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
         $(this).parents('.pack-item').find('.pack-content').slideToggle(400)
     })
 
-    let isArticlePage = document.getElementById('article-content')
-    if (isArticlePage && !mobileAndTabletCheck()) {
-        new SimpleBar(document.getElementById('article-content'))
+    let isScrollElement = document.getElementById('scroll-content')
+    if (isScrollElement && !mobileAndTabletCheck()) {
+        new SimpleBar(document.getElementById('scroll-content'))
     }
 
     window.addEventListener('scroll', function (e) {

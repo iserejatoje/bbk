@@ -26,6 +26,7 @@
   font-size: 16px;
   line-height: 1.375;
   width: 100%;
+  max-height: 900px;
 
   @include respond($mobile) {
     max-width: 806px;

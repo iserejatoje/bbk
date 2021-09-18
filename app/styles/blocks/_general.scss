@@ -580,18 +580,49 @@ footer {
   top: 0;
 }
 
+.simplebar-horizontal {
+  display: none;
+}
+
 .bottom-right {
   right: 0;
   bottom: 0;
 }
 
+#scroll-content:not([data-simplebar]) {
+  overflow: hidden;
+}
+
+form {
+
+  input,
+  textarea {
+    background: transparent;
+    width: 100%;
+    border: 1px solid #6f6f6f;
+    font-size: 14px;
+    padding: 0 17px;
+    color: #fff;
+  }
+
+  textarea {
+    height: 100px;
+    resize: none;
+    padding-top: 6px;
+  }
+
+  input {
+    height: 50px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
 .center {
   display: flex;
   justify-content: center;
-}
-
-[data-simplebar] {
-  max-height: 900px;
 }
 
 .fs-40_bold {
@@ -661,9 +692,56 @@ footer {
   }
 }
 
+.gradient-45 {
+  background: linear-gradient(45deg, #303030, #505050);
+}
+
 .checkbox {
+
+  span {
+    width: 23px;
+    height: 23px;
+    border: 1px solid #898a90;
+    display: block;
+    transition: border 200ms ease-in-out;
+    cursor: pointer;
+    @include respond($mobile) {
+      margin-left: 30px;
+    }
+    @include respond(0, $mobile) {
+      margin-left: 15px;
+    }
+  }
+
+  svg {
+    display: block;
+    margin-left: 4px;
+    margin-top: 4px;
+    transition: opacity 100ms ease-in-out;
+  }
+
+  &:hover {
+    span {
+      border-color: $accent;
+    }
+  }
+
   input {
     opacity: 0;
     position: absolute;
+
+    &:not(:checked) + span {
+      svg {
+        opacity: 0;
+      }
+    }
+
+    &:checked + span {
+      border-color: $accent;
+
+      svg {
+        opacity: 1;
+      }
+    }
   }
 }
