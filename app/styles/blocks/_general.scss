@@ -18,6 +18,16 @@
   }
 }
 
+#map {
+  width: 100%;
+  @include respond($mobile) {
+    height: 500px;
+  }
+  @include respond(0, $mobile) {
+    height: 250px;
+  }
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -37,8 +47,10 @@
 }
 
 .button {
+  &:not(.button-switch) {
+    width: 100%;
+  }
   background: transparent;
-  width: 100%;
   text-transform: uppercase;
   line-height: 1.2;
   text-decoration: none;
@@ -743,5 +755,55 @@ form {
         opacity: 1;
       }
     }
+  }
+}
+
+
+.pack-expert {
+  position: relative;
+
+  .packman {
+    position: absolute;
+    right: -35px;
+    bottom: -2px;
+    display: block;
+    z-index: -2;
+    pointer-events: none;
+
+    @include respond($mobile, 1066px) {
+      max-width: 590px;
+    }
+    @include respond(0, $mobile) {
+      display: none;
+    }
+  }
+
+  @include respond($mobile) {
+    padding-bottom: 100px;
+  }
+  @include respond(0, $mobile) {
+    padding-bottom: 50px;
+  }
+}
+
+.expert-form {
+  @include respond($mobile) {
+    max-width: 400px;
+    min-height: 500px;
+    padding: 55px 50px;
+  }
+  @include respond(0, $mobile) {
+    padding: 30px 20px;
+  }
+
+  .title {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    line-height: 1.375;
+  }
+
+  .form-controls {
+    margin-top: 28px;
   }
 }

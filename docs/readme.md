@@ -5,3 +5,4 @@
 - [Услуги](https://iserejatoje.github.io/bbk/services.html)
 - [О компании](https://iserejatoje.github.io/bbk/about.html)
 - [Пакеты услуг](https://iserejatoje.github.io/bbk/packs.html)
+- [Контакты](https://iserejatoje.github.io/bbk/contacts.html)

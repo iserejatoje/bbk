@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
         $('body').toggleClass('menu-opened')
     })
 
+    $('.button-switch').click(function() {
+        $(this).addClass('active').siblings().removeClass('active')
+        $('.address-tabs .tab').eq($(this).index()).addClass('active').siblings().removeClass('active')
+    })
+
     $('.pack-checkbox').change(() => {
         let total = 0
         $('.pack-checkbox:checked').each(function(){

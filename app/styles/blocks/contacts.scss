@@ -1,0 +1,125 @@
+.about-columns {
+  margin-top: 12px;
+  display: flex;
+  color: #fff;
+
+  @include respond(0, $mobile) {
+    flex-direction: column;
+  }
+
+  .column:last-child {
+    padding-top: 8px;
+    @include respond($mobile) {
+      max-width: 540px;
+      width: 100%;
+    }
+    @include respond(0, $mobile) {
+      padding-bottom: 25px;
+    }
+
+    .title {
+      @include respond($mobile) {
+        font-size: 34px;
+      }
+      @include respond(0, $mobile) {
+        font-size: 22px;
+      }
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+  }
+
+  .column:first-child {
+    flex: 1;
+    padding-right: 25px;
+  }
+
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .button-switch {
+    margin-top: 8px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    border: 1px solid #6f6f6f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0 32px;
+    height: 50px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: border 200ms ease-in-out;
+
+    &.active,
+    &:hover {
+      border-color: $accent;
+    }
+  }
+}
+
+.contact-page {
+  #map {
+    @include respond($mobile) {
+      margin-bottom: 110px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.address-tabs {
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.47;
+
+  @include respond(0, $mobile) {
+    margin-bottom: 55px;
+    font-size: 22px;
+  }
+  @include respond($mobile) {
+    margin-bottom: 92px;
+    font-size: 34px;
+  }
+
+  .tab {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include respond($mobile) {
+      max-width: 508px;
+    }
+
+    &:not(.active) {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a[href^="tel"] {
+    color: $accent;
+    margin-top: 8px;
+
+    @include respond(0, $mobile) {
+      margin-bottom: 8px;
+    }
+  }
+
+  a[href^="mailto"] {
+    color: #fff;
+  }
+}

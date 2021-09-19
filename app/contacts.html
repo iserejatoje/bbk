@@ -1,0 +1,74 @@
+<!--#set var="title" value="Контакты" -->
+<!--#include virtual="/parts/header.html" -->
+
+<div class="page-block contact-page">
+    <img src="images/top-left.png" class="top-left" alt="">
+    <img src="images/bottom-right.png" class="bottom-right" alt="">
+    <img src="images/contacts-bg.png" class="page-bg contacts-bg" alt="">
+
+    <div class="container">
+
+        <div class="about-columns">
+            <div class="column">
+                <div class="switcher">
+                    <button class="button-switch active" data-latlng="55.35932657605276,86.06609599999997">Кемерово</button>
+                    <button class="button-switch" data-latlng="53.751106,87.12609">Новокузнецк</button>
+                </div>
+
+                <div class="address-tabs">
+                    <div class="tab active">
+                        г. Кемерово, пр-т Советский,
+                        27, офис 406, 650000
+                        <a href="tel:8 (800) 250-6995">8 (800) 250-6995</a>
+                        <a href="mailto:info@voenniy-bilet.com">info@voenniy-bilet.com</a>
+                    </div>
+                    <div class="tab">
+                        г. Новокузнецк, пр-т Бардина
+                        26, офис 705, 654041
+                        <a href="tel:8 (800) 250-6995">8 (800) 250-6995</a>
+                        <a href="mailto:info@voenniy-bilet.com">info@voenniy-bilet.com</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="title">О нас</div>
+                <p>
+                    С 2008 года наша компания занимается профессиональной
+                    правовой поддержкой призывников и военнослужащих.
+                    В отличие от адвокатов и юридических фирм, мы специализируемся
+                    на защите прав призывников и обладаем необходимыми
+                    знаниями и опытом. Благодаря нашим специалистам,
+                    мы имеем четкое представление о ведении дел, индивидуально
+                    прорабатываем стратегию защиты от призыва для каждого
+                    призывника. Ежедневно мы  стремимся  оказывать только
+                    качественную юридическую помощь.
+                </p>
+            </div>
+        </div>
+
+        <div id="map" data-lat="55.35932657605276" data-lng="86.06609599999997"></div>
+
+        <div class="pack-expert">
+            <form action="" method="post" enctype="application/x-www-form-urlencoded" class="expert-form gradient-45">
+                <input type="hidden" name="action" value="expert">
+                <div class="title">проконсультируем бесплатно, Задайте ваш вопрос эксперту</div>
+
+                <div class="form-controls">
+                    <input type="text" required autocomplete="off" name="firstname" placeholder="Ваше имя">
+                    <input type="tel" required autocomplete="off" name="phone" placeholder="Ваш телефон">
+                    <textarea placeholder="Ваш вопрос" required name="message"></textarea>
+                    <button type="submit" class="button button-medium">Задать вопрос</button>
+                    <span class="privacy-text">Я согласен на обработку персональных данных</span>
+                </div>
+            </form>
+
+            <img src="images/packman.png" alt="" class="packman">
+        </div>
+
+    </div>
+</div>
+
+<script src="js/map.min.js"></script>
+<link rel="stylesheet" href="css/leaflet.min.css">
+<!--#include virtual="/parts/footer.html" -->
